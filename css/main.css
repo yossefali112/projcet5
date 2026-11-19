@@ -173,8 +173,9 @@ margin-block:40px ;}
 #carouselExampleIndicators img {
     width: calc((100% - 30px) / 3);
     height: 300px;
-    object-fit: cover;}
-
+    object-fit: cover;
+ transition: 0.5s;}
+#carouselExampleIndicators img:hover{border: 2px solid yellow;}
 
 .my-photo img{width: 90%;}
 
@@ -227,30 +228,41 @@ background-image: linear-gradient(190deg, yellow,red);
 .header-we-do h3{margin-block: 50px;}
 
 
-
-.animtion-left img{width:100px;
+.animtion-left {
+    overflow: hidden;
+}
+.animtion-left img{
+    
+    width:100px;
 margin-left:20px;
 margin-top: 50px;
 align-self: start;
 
 position: relative;
 left: 0;
-overflow: hidden;
+
 animation-name:moving1 ;
-animation-duration: 8s;
+animation-duration: 5s;
     animation-timing-function: linear;
-animation-iteration-count: infinite;}
+animation-iteration-count: infinite;
+}
 
 
 @keyframes moving1{
      
-    0%{left: 250;}
-    25%{left: 500px;}
-    50%{left: 1000px;}
-    75%{left: 500px;}
-    100%{left: 250px;}
+    /* 0%{left: 0;}
+    25%{left: 0%;}
+    50%{left: -100%;}
+    75%{left: 0%;}
+    100%{left: 0;} */
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
 }
-
+.animtion-right{   overflow: hidden; }
 .animtion-right img{
     width:100px;
 margin-left:20px;
@@ -259,19 +271,23 @@ align-self: start;
     position: relative;
     right: 0;
     animation-name:moving2 ;
-    animation-duration: 8s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-   overflow: hidden; 
 }
 
 @keyframes moving2{
      
-    0%{right: 0;}
+    /* 0%{right: 0;}
     25%{right: 250px;}
     50%{right: 1000px;}
     75%{right: 500px;}
     100%{right: 0px;}
+     */
+     100%{
+        transform: translateX(0);
+     }
+     0%{transform: translateX(-50%);}
 }
 
 .animtion{position: relative;
